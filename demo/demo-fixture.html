@@ -19,6 +19,8 @@ limitations under the License.
 
 <!-- Imports -->
 <link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../../iron-flex-layout/iron-flex-layout-classes.html">
+
 <link rel="import" href="../../paper-button/paper-button.html">
 
 <link rel="import" href="../ft-source-grid.html">
@@ -32,13 +34,14 @@ An element that renders a grid of FileThis sources
  -->
 <dom-module id="demo-fixture">
 
-    <style include="iron-flex iron-flex-alignment"></style>
+    <style include="iron-flex iron-flex-alignment iron-positioning"></style>
 
     <template>
 
         <div class="layout vertical center">
-            <ft-source-grid id="grid"
-                              style="overflow:hidden; overflow-y:scroll; border:1px solid #DDD; width:563px;height:400px">
+            <ft-source-grid
+                    id="grid"
+                    style="overflow:auto; width:563px; height:370px; border:1px solid #DDD">
             </ft-source-grid>
         </div>
 

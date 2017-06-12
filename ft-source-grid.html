@@ -31,7 +31,7 @@ An element that renders a list of FileThis source items in a grid layout.
 
 <dom-module id="ft-source-grid">
 
-    <style include="iron-flex iron-flex-alignment"></style>
+    <style include="iron-flex iron-flex-alignment iron-positioning"></style>
 
     <template>
 
@@ -65,8 +65,7 @@ An element that renders a list of FileThis source items in a grid layout.
                 {
                     type: Array,
                     notify: true,
-                    value: [],
-                    observer: "_onSourcesChanged"
+                    value: []
                 },
 
                 /** The currently-selected source, if any. */
@@ -76,12 +75,6 @@ An element that renders a list of FileThis source items in a grid layout.
                     notify: true,
                     value: null
                 }
-            },
-
-            _onSourcesChanged: function(to, from)
-            {
-                // Hack for some kind of bug in iron-list
-                this.async(function() { this.$.sourceGrid.fire('iron-resize'); }, 1);
             }
 
         });
