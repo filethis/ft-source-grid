@@ -47,7 +47,7 @@ An element that renders a list of FileThis source items in a grid layout.
             <template>
                 <ft-source-grid-item
                         source="[[source]]"
-                        selected$="[[selected]]">
+                        selected="[[selected]]">
                 </ft-source-grid-item>
             </template>
         </iron-list>
@@ -76,6 +76,11 @@ An element that renders a list of FileThis source items in a grid layout.
                     notify: true,
                     value: null
                 }
+            },
+
+            clearSelection: function()
+            {
+                this.$.sourceGrid.clearSelection();
             }
 
         });
