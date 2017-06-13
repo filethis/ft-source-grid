@@ -35,6 +35,12 @@ An element that renders a list of FileThis source items in a grid layout.
 
     <template>
 
+        <style>
+            :host {
+                display:block;
+            }
+        </style>
+
         <iron-list grid
                    selection-enabled
                    id="sourceGrid"
