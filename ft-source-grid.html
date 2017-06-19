@@ -65,6 +65,11 @@ An element that renders a list of FileThis source items in a grid layout.
 
             is: 'ft-source-grid',
 
+            listeners:
+            {
+                'tap': '_onTap'
+            },
+
             properties: {
 
                 /** The list of source resources to be be displayed. */
@@ -82,6 +87,12 @@ An element that renders a list of FileThis source items in a grid layout.
                     notify: true,
                     value: null
                 }
+            },
+
+            _onTap: function()
+            {
+                if (event.ftComponentName === undefined)
+                    event.ftComponentName = "ft-source-grid";
             },
 
             clearSelection: function()
