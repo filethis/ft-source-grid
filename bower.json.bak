@@ -4,7 +4,7 @@
   "main": "ft-source-grid.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.9.1",
-    "ft-source-grid-item": "filethis/ft-source-grid-item#^0.0.4",
+    "ft-source-grid-item": "filethis/ft-source-grid-item#^0.0.5",
     "iron-list": "PolymerElements/iron-list#^2.0.0",
     "array-filter": "43081j/array-filter#^1.0.2"
   },
