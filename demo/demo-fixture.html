@@ -34,9 +34,9 @@ An element that renders a grid of FileThis sources
  -->
 <dom-module id="demo-fixture">
 
-    <style include="iron-flex iron-flex-alignment iron-positioning"></style>
-
     <template>
+
+        <style include="iron-flex iron-flex-alignment iron-positioning"></style>
 
         <style>
             :host {
@@ -47,7 +47,7 @@ An element that renders a grid of FileThis sources
         <div class="layout vertical center">
             <ft-source-grid
                     id="grid"
-                    style="overflow:auto; width:563px; height:370px; border:1px solid #DDD">
+                    style="overflow:auto; width:600px; height:370px; border:1px solid #DDD">
             </ft-source-grid>
         </div>
 
@@ -80,9 +80,9 @@ An element that renders a grid of FileThis sources
                     if (xmlHttpRequest.readyState === 4 &&
                         xmlHttpRequest.status === 200)
                     {
-                        grid.sources = JSON.parse(xmlHttpRequest.responseText);
+                        this.$.grid.sources = JSON.parse(xmlHttpRequest.responseText);
                     }
-                };
+                }.bind(this);
                 xmlHttpRequest.send();
             }
 
