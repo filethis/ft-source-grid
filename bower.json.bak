@@ -4,7 +4,7 @@
   "main": "ft-source-grid.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.1",
-    "ft-source-grid-item": "filethis/ft-source-grid-item#^0.0.5",
+    "ft-source-grid-item": "filethis/ft-source-grid-item#^0.0.6",
     "iron-list": "PolymerElements/iron-list#^2.0.0",
     "array-filter": "43081j/array-filter#^1.0.2"
   },
@@ -15,5 +15,7 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
   },
   "resolutions": {
+    "polymer": "^2.0.1",
+    "webcomponentsjs": "^v1.0.0"
   }
 }
