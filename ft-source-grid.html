@@ -77,7 +77,8 @@ An element that renders a list of FileThis source items in a grid layout.
                 {
                     type: Array,
                     notify: true,
-                    value: []
+                    value: [],
+                    observer: "_onSourcesChanged"
                 },
 
                 /** The currently-selected source, if any. */
@@ -87,6 +88,11 @@ An element that renders a list of FileThis source items in a grid layout.
                     notify: true,
                     value: null
                 }
+            },
+
+            _onSourcesChanged: function(to, from)
+            {
+                this.$.sourceGrid.fire('resize')
             },
 
             _onTap: function()
