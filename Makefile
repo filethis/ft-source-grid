@@ -1,6 +1,6 @@
 # Project configuration
 NAME=ft-source-grid
-VERSION=0.0.12
+VERSION=0.0.13
 LOCAL_PORT=3644
 GITHUB_USER=filethis
 
