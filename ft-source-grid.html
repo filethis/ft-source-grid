@@ -36,15 +36,15 @@ This element displays a grid layout of FileThis source resources.
         <style>
             :host {
                 display:block;
-                width:100%;
-                height:100%;
+                @apply --layout-vertical;
             }
         </style>
 
         <iron-list grid
                    selection-enabled
                    id="sourceGrid"
-                   style="width:100%; height:100%; background-color:white; "
+                   class="flex"
+                   style="background-color:white; "
                    items="[[sources]]"
                    selected-item="{{selectedSource}}"
                    as="source">
@@ -64,10 +64,6 @@ This element displays a grid layout of FileThis source resources.
         Polymer({
 
             is: 'ft-source-grid',
-
-            behaviors: [
-                Polymer.IronResizableBehavior
-            ],
 
             listeners:
             {
