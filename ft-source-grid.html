@@ -35,18 +35,21 @@ This element displays a grid layout of FileThis source resources.
 
         <style>
             :host {
-                display:block;
-                overflow:hidden;
+                display: block;
+                overflow: hidden;
                 @apply --layout-vertical;
                 @apply --ft-source-grid;
+            }
+            .grid {
+                background-color: white;
+                @apply --ft-source-grid-grid;
             }
         </style>
 
         <iron-list grid
                    selection-enabled
                    id="sourceGrid"
-                   class="flex"
-                   style="background-color:white; "
+                   class="grid flex"
                    items="[[sources]]"
                    selected-item="{{selectedSource}}"
                    as="source">
