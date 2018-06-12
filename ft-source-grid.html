@@ -40,16 +40,16 @@ This element displays a grid layout of FileThis source resources.
                 @apply --layout-vertical;
                 @apply --ft-source-grid;
             }
-            .grid {
+            .sourceGrid {
                 background-color: white;
                 @apply --ft-source-grid-grid;
             }
         </style>
 
         <iron-list grid
-                   selection-enabled
                    id="sourceGrid"
-                   class="grid flex"
+                   selection-enabled
+                   class="flex"
                    items="[[sources]]"
                    selected-item="{{selectedSource}}"
                    as="source">
