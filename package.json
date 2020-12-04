@@ -1,7 +1,7 @@
 {
   "description": "An element that renders a list of FileThis source items in a grid layout.",
-  "name": "filethis/ft-source-grid",
-  "version": "filethis/1.0.25",
+  "name": "ft-source-grid",
+  "version": "1.0.25",
   "resolutions": {
     "inherits": "2.0.3",
     "samsam": "1.1.3",
