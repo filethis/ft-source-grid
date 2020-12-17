@@ -13,11 +13,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-/* ft-source-grid element demo */
 /* Imports */
 /**
 
-An element that renders a grid of FileThis sources
+This element defines a source grid example that allows experimentation with configuration.
 
 @demo
  */
@@ -26,11 +25,14 @@ An element that renders a grid of FileThis sources
   from HTML and may be out of place here. Review them and
   then delete this comment!
 */
-
 import '@polymer/iron-flex-layout/iron-flex-layout-classes.js';
-import '@polymer/paper-button/paper-button.js';
+
+import '@polymer/paper-checkbox/paper-checkbox.js';
+import '@polymer/paper-input/paper-input.js';
 import '@polymer/polymer/polymer-legacy.js';
-import '../ft-source-grid.js';
+import '@polymer/polymer/lib/elements/custom-style.js';
+import '../ft-source-grid-item-settings-behavior.js';
+import '@webcomponents/shadycss/entrypoints/apply-shim.js';
 import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 
@@ -43,46 +45,26 @@ Polymer
             :host {
                 display: block;
                 overflow: hidden;
-                width:500px;
-                height:700px;
+                @apply --layout-vertical;
+                @apply --ft-source-grid-item-settings-editor;
             }
         </style>
 
-        <ft-element-demo name="ft-source-grid" style="width:100%; height: 100%; ">
+        <custom-style>
+            <style>
+                paper-checkbox {
+                    width: 165px;
+                    margin-bottom: 16px;
+                }
+            </style>
+        </custom-style>
 
-            <ft-source-grid slot="instance" id="grid" style="width:100%; height: 100%; ">
-            </ft-source-grid>
-
-        </ft-element-demo>
+        <!-- Settings -->
+        <paper-checkbox checked="{{ftSourceGridItemShowIdentifyButton}}">
+            Show Identify Button
+        </paper-checkbox>
 `,
 
-  is: 'demo-fixture',
-
-  properties:
-  {
-  },
-
-  ready: function()
-  {
-      this._loadFakeSources();
-  },
-
-  _loadFakeSources: function()
-  {
-      var path = "fake-sources.json";
-
-      var xmlHttpRequest = new XMLHttpRequest();
-      xmlHttpRequest.overrideMimeType("application/json");
-      xmlHttpRequest.open('GET', path, true);
-      xmlHttpRequest.onreadystatechange = function()
-      {
-          if (xmlHttpRequest.readyState === 4 &&
-              xmlHttpRequest.status === 200)
-          {
-              var sources = JSON.parse(xmlHttpRequest.responseText);
-              this.$.grid.sources = sources;
-          }
-      }.bind(this);
-      xmlHttpRequest.send();
-  }
+  is: 'ft-source-grid-item-settings-editor',
+  behaviors: [FileThis.SourceGridItemSettingsBehavior]
 });
