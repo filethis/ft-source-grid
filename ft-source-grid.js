@@ -25,7 +25,7 @@ This element displays a grid layout of FileThis source resources.
   from HTML and may be out of place here. Review them and
   then delete this comment!
 */
-import 'ft-source-grid-item/ft-source-grid-item.js';
+import '@filethis/ft-source-grid-item/ft-source-grid-item.js';
 
 import '@polymer/iron-flex-layout/iron-flex-layout-classes.js';
 import '@polymer/iron-list/iron-list.js';
